@@ -1,0 +1,75 @@
+.container {
+  max-width: 600px; /* Limita el ancho del formulario */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+  padding: 20px; /* Añade espacio interior alrededor del formulario */
+  background-color: #f8f9fa; /* Fondo claro para resaltar el formulario */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+}
+
+/* Espaciado entre grupos de formulario */
+.form-group {
+  margin-bottom: 15px; /* Espacio entre los campos del formulario */
+}
+
+/* Estilos para las etiquetas de los campos */
+label {
+  font-weight: bold; /* Negrita para destacar las etiquetas */
+  display: block; /* Asegura que la etiqueta ocupe toda la línea */
+  margin-bottom: 5px; /* Espacio entre la etiqueta y el campo */
+  color: #333; /* Color de texto oscuro para mejor legibilidad */
+}
+
+/* Estilos para los inputs del formulario */
+input[type="text"],
+input[type="number"] {
+  width: 100%; /* Inputs ocupan todo el ancho del contenedor */
+  padding: 8px; /* Añade espacio interior a los inputs */
+  border: 1px solid #ced4da; /* Borde gris claro */
+  border-radius: 4px; /* Bordes redondeados */
+  box-sizing: border-box; /* Incluye padding y border en el ancho total */
+  font-size: 1em; /* Tamaño de fuente estándar */
+}
+
+/* Estilo para inputs en estado de error */
+input.ng-invalid.ng-touched {
+  border-color: #dc3545; /* Borde rojo para inputs inválidos */
+}
+
+/* Estilo para los mensajes de error */
+.error {
+  color: #dc3545; /* Rojo para destacar los errores */
+  font-size: 0.9em; /* Tamaño de fuente ligeramente reducido */
+  margin-top: 5px; /* Espacio entre el campo y el mensaje de error */
+}
+
+/* Estilo para los botones */
+.btn {
+  margin-right: 10px; /* Espacio entre los botones */
+  padding: 10px 15px; /* Relleno dentro de los botones */
+  font-size: 1em; /* Tamaño de fuente estándar */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de mano para indicar clickeabilidad */
+}
+
+/* Estilo para el botón principal */
+.btn-primary {
+  background-color: #007bff; /* Azul para el botón principal */
+  color: white; /* Texto en blanco */
+}
+
+.btn-primary:disabled {
+  background-color: #6c757d; /* Gris para el botón deshabilitado */
+  cursor: not-allowed; /* Cursor de prohibido para el botón deshabilitado */
+}
+
+/* Estilo para el botón secundario */
+.btn-secondary {
+  background-color: #6c757d; /* Gris para el botón secundario */
+  color: white; /* Texto en blanco */
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268; /* Gris más oscuro al pasar el cursor */
+}

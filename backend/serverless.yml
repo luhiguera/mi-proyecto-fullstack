@@ -1,0 +1,41 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: miproyectofullstack
+service: inventory-service  # Nombre de tu servicio
+
+provider:
+  name: aws
+  runtime: nodejs18.x          # Versión de Node.js
+  stage: dev                   # Etapa de despliegue (dev, prod, etc.)
+  region: us-east-1            # Región de AWS
+  environment:                 # Aquí defines las variables de entorno
+    DB_CONNECTION_STRING: "./miBaseDeDatos.sqlite"
+    JWT_SECRET: "1603c871a90ddb7953810ebaca8dcda8fc3169cbfe3afa7eb5c7386bd64da4cb82f75898e035821df1c0af1510046d2474beb55a163bde04134e8153d276f5a0"
+    NODE_ENV: "production"
+
+functions:
+  app:
+    handler: index.handler     # Archivo y función de entrada
+    events:
+      - http:
+          path: /
+          method: get
+      - http:
+          path: /{proxy+}
+          method: any
+
+# Plugin opcional para pruebas locales
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true
+    stage: local
+
+package:
+  exclude:
+    - .gitignore
+    - .git/**
+
+  include:
+    - node_modules/**

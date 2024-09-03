@@ -1,0 +1,29 @@
+<div class="inventory-container">
+  <h2>Lista de Inventario</h2>
+
+  <button class="add-button" (click)="addItem()">Añadir Nuevo Ítem</button>
+
+  <table class="inventory-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of inventory$ | async">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price | currency:'USD':true }}</td>
+        <td>
+          <button class="edit-button" (click)="editItem(item.id)">Editar</button>
+          <button class="delete-button" (click)="deleteItem(item.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
