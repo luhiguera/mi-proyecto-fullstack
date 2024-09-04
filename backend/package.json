@@ -1,13 +1,22 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "description": "Backend del proyecto de gestión de inventarios usando Node.js, Express y SQLite.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "serverless offline"
+    "start": "serverless offline",
+    "test": "node --experimental-specifier-resolution=node --loader ts-node/esm test.js",
+    "coverage": "nyc report --reporter=html",
+    "deploy": "serverless deploy"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "backend",
+    "nodejs",
+    "express",
+    "sqlite",
+    "serverless"
+  ],
+  "author": "Tu Nombre",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -19,11 +28,12 @@
     "serverless-http": "^3.2.0",
     "sqlite3": "^5.1.7"
   },
-  "description": "",
   "devDependencies": {
     "chai": "^5.1.1",
     "chai-http": "^5.0.0",
     "mocha": "^10.7.3",
-    "serverless-offline": "^13.8.0"
+    "nyc": "^17.0.0",
+    "serverless-offline": "^13.8.0",
+    "ts-node": "^10.9.2"
   }
 }
